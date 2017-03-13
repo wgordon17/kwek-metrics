@@ -15,6 +15,9 @@ from flask import Flask
 
 from kwek.database import db
 
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
 
 def register_blueprints(app, blueprints):
     """Registers the blueprints given by loading their module
